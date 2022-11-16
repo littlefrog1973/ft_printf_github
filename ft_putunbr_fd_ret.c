@@ -1,0 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putunbr_fd_ret.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/15 11:17:50 by sdeeyien          #+#    #+#             */
+/*   Updated: 2022/11/15 11:20:46 by sdeeyien         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+static	void	put_out(int fd, char *str, int len)
+{
+	int	i;
+
+	i = 0;
+	if (len > 0)
+	{
+		while (i < len)
+		{
+			write(fd, (str + len - 1 - i), 1);
+			i++;
+		}
+	}
+}
+
+int	ft_putunbr_fd_ret(unsigned int n, int fd)
+{
+	char		str[20];
+	int			i;
+
+	i = 0;
+	while (i < 20)
+		str[i++] = '\0';
+	i = 0;
+	if (n == 0)
+		str[i++] = '0';
+	else
+	{
+		while (n != 0 && i < 20)
+		{
+			str[i++] = n % 10 + '0';
+			n = n / 10;
+		}
+	}
+	put_out(fd, str, i);
+	return (i);
+}
+
