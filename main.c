@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:29:07 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/15 16:27:55 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:12:19 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ int main(void)
 {
 	int prtf_ret;
 	int ft_prtf_ret;
-	size_t ptr;
+//	size_t ptr;
 	void	*v_ptr;
 	void	*null_ptr;
 
 	v_ptr = (void *) &ft_prtf_ret;
 	null_ptr = NULL;
 
+/* ignore to debuch %c on bottom 20221116 16:15
 	printf("c = %c\n", 'c');
 	ft_printf("c = %c\n", 'c');
 
@@ -69,15 +70,18 @@ int main(void)
 	printf(" NULL %s NULL \n",(char *) NULL);
 	ft_printf(" NULL %s NULL \n", (char*) NULL);
 
-//	prtf_ret = printf(" NULL %s NULL \n",(char *) NULL);
-//	ft_prtf_ret = ft_printf(" NULL %s NULL \n", (char*) NULL);
-	prtf_ret = printf("%s", (char *) NULL);
-	ft_prtf_ret = ft_printf("%s", (char*) NULL);
+	prtf_ret = printf(" NULL %s NULL \n",(char *) NULL);
+	ft_prtf_ret = ft_printf(" NULL %s NULL \n", (char*) NULL);
+*/
+	prtf_ret = printf("%s\n", (char *) NULL);
+	ft_prtf_ret = ft_printf("%s\n", (char *) NULL);
 	printf("prtf_return = %d, ft_prtf_return = %d\n", prtf_ret, ft_prtf_ret);
 
-	printf("%c%c%c*", '\0', '1', 1);
+/*
+	prtf_ret = printf("%c%c%c*", '\0', '1', 1);
 	printf("\n");
-	ft_printf("%c%c%c*", '\0', '1', 1);
+	ft_prtf_ret = ft_printf("%c%c%c*", '\0', '1', 1);
 	ft_printf("\n");
+*/
 	return (0);
 }

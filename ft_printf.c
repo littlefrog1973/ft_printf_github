@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:52:01 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/15 16:43:42 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:28:51 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int check_fstr(const char **fstr, va_list arg_lists, int *no_printed)
 		{
 			ft_putchar_fd(va_arg(arg_lists, int), 1);
 			*fstr += 2;
-			return ((*no_printed)++);
+			return (++(*no_printed));
 		}
 		if (*(*fstr + 1) == 's')
 		{

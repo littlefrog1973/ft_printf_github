@@ -8,9 +8,12 @@
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "-Wall",
+                "-Werror",
+                "-Wextra",
+                "${workspaceFolder}/main.c",
+                "${workspaceFolder}/libftprintf.a",
+                "${workspaceFolder}/ft_printf.h",
             ],
             "options": {
                 "cwd": "${fileDirname}"
