@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:52:01 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/17 12:00:28 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:15:24 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,43 +17,23 @@ static int	check_fstr(const char **fstr, va_list ar_lst, int *no_prn)
 {
 	if (**fstr == '%')
 	{
-		if (*(*fstr + 1) == 'c')
+		if (ft_strchr("csdixXpu", *(*fstr + 1)))
+			*fstr += 2;
+		if (*(*fstr - 1) == 'c')
 		{
 			ft_putchar_fd(va_arg(ar_lst, int), 1);
-			*fstr += 2;
 			return (++(*no_prn));
 		}
-		if (*(*fstr + 1) == 's')
-		{
-			*fstr += 2;
+		if (*(*fstr - 1) == 's')
 			return (*no_prn += putstr(va_arg(ar_lst, char *), 1));
-		}
-		if (*(*fstr + 1) == 'd' || *(*fstr + 1) == 'i')
-		{
-			*fstr += 2;
+		if (*(*fstr - 1) == 'd' || *(*fstr - 1) == 'i')
 			return (*no_prn += putnbr(va_arg(ar_lst, int), 1));
-		}
-		if (*(*fstr + 1) == 'x' || *(*fstr + 1) == 'X')
-		{
-			*fstr += 2;
+		if (*(*fstr - 1) == 'x' || *(*fstr - 1) == 'X')
 			return (*no_prn += puthex(va_arg(ar_lst, int), 1, (*(*fstr - 1))));
-		}
-		if (*(*fstr + 1) == 'p')
-		{
-			*fstr += 2;
+		if (*(*fstr - 1) == 'p')
 			return (*no_prn += putptr(va_arg(ar_lst, void *), 1));
-		}
-		if (*(*fstr + 1) == 'u')
-		{
-			*fstr += 2;
+		if (*(*fstr - 1) == 'u')
 			return (*no_prn += putunbr(va_arg(ar_lst, unsigned int), 1));
-		}
-/*		if (*(*fstr + 1) == '%')
-		{
-			*fstr += 1;
-			return (0);
-		}
-*/
 	}
 	return (0);
 }
