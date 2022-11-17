@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:29:07 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/16 22:54:54 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/17 11:53:57 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int main(void)
 	int prtf_ret;
 	int ft_prtf_ret;
 //	size_t ptr;
-	void	*v_ptr;
-	void	*null_ptr;
+//	void	*v_ptr;
+//	void	*null_ptr;
 
-	v_ptr = (void *) &ft_prtf_ret;
-	null_ptr = NULL;
+//	v_ptr = (void *) &ft_prtf_ret;
+//	null_ptr = NULL;
 
 /* ignore to debuch %c on bottom 20221116 16:15
 	printf("c = %c\n", 'c');
@@ -56,8 +56,9 @@ int main(void)
 	printf("ptr to int ptr = %p\n", &ft_prtf_ret);
 	ft_printf("ptr to int ptr ft = %p\n", &ft_prtf_ret);
 */
-	prtf_ret = printf("   hex int = %x\n", -999999999);
-	ft_prtf_ret = ft_printf("ft hex int = %x\n", -999999999 );
+	prtf_ret = printf("   hex int = %x %%\n", -999999999);
+	ft_prtf_ret = ft_printf("ft hex int = %x %%\n", -999999999 );
+	printf("prtf_ret = %d, ft_prtf_ret = %d\n", prtf_ret, ft_prtf_ret);
 /*	printf("   unsigned int = %u\n", UINT_MAX);
 	ft_printf("unsigned int = %u\n", UINT_MAX );
 
