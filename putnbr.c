@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd_ret.c                                 :+:      :+:    :+:   */
+/*   putnbr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 11:54:35 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/11 13:57:57 by sdeeyien         ###   ########.fr       */
+/*   Created: 2022/11/16 22:18:16 by sdeeyien          #+#    #+#             */
+/*   Updated: 2022/11/16 23:52:15 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static	void	put_out(int fd, char *str, int len)
+static	int	put_out(int fd, char *str, int len)
 {
 	int	i;
 
@@ -25,9 +25,10 @@ static	void	put_out(int fd, char *str, int len)
 			i++;
 		}
 	}
+	return (len);
 }
 
-int	ft_putnbr_fd_ret(int n, int fd)
+int	putnbr(int n, int fd)
 {
 	char		str[20];
 	int			i;
@@ -53,6 +54,5 @@ int	ft_putnbr_fd_ret(int n, int fd)
 		if (n < 0)
 			str[i++] = '-';
 	}
-	put_out(fd, str, i);
-	return (i);
+	return (put_out(fd, str, i));
 }

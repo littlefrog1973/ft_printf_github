@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr_fd_ret.c                               :+:      :+:    :+:   */
+/*   putptr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 11:40:48 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/14 16:53:21 by sdeeyien         ###   ########.fr       */
+/*   Created: 2022/11/16 22:17:56 by sdeeyien          #+#    #+#             */
+/*   Updated: 2022/11/16 23:54:49 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static	void	put_out(int fd, char *str, int len)
 	}
 }
 
-int	ft_putptr_fd_ret(void *ptr, int fd)
+int	putptr(void *ptr, int fd)
 {
 	char		str[20];
 	int			i;
@@ -41,9 +41,7 @@ int	ft_putptr_fd_ret(void *ptr, int fd)
 		str[i++] = '\0';
 	i = 0;
 	if (ptr == NULL)
-		i = (int) ft_strlcpy(str, ")lin(", sizeof(")lin(") + 1 );
-//	else if (*((char *) ptr) == '\0')
-//		i = (int) ft_strlcpy(str, ")nil(", sizeof(")nil(") + 1);
+		i = (int) ft_strlcpy(str, ")lin(", sizeof(")lin(") + 1);
 	else
 	{
 		rem = (size_t) ptr;

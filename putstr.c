@@ -1,52 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbr_fd_ret.c                                :+:      :+:    :+:   */
+/*   putstr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 11:17:50 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/15 11:20:46 by sdeeyien         ###   ########.fr       */
+/*   Created: 2022/11/16 22:17:37 by sdeeyien          #+#    #+#             */
+/*   Updated: 2022/11/16 22:17:42 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft/libft.h"
 
-static	void	put_out(int fd, char *str, int len)
+int	putstr(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (len > 0)
+	if (s)
 	{
-		while (i < len)
-		{
-			write(fd, (str + len - 1 - i), 1);
-			i++;
-		}
+		write(fd, s, ft_strlen(s));
+		return (ft_strlen(s));
 	}
-}
-
-int	ft_putunbr_fd_ret(unsigned int n, int fd)
-{
-	char		str[20];
-	int			i;
-
-	i = 0;
-	while (i < 20)
-		str[i++] = '\0';
-	i = 0;
-	if (n == 0)
-		str[i++] = '0';
 	else
 	{
-		while (n != 0 && i < 20)
-		{
-			str[i++] = n % 10 + '0';
-			n = n / 10;
-		}
+		write(fd, "(null)", sizeof("(null)") - 1);
+		return (sizeof("(null)") - 1);
 	}
-	put_out(fd, str, i);
-	return (i);
 }
-

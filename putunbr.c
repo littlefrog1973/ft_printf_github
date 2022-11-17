@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex_fd_ret.c                                 :+:      :+:    :+:   */
+/*   putunbr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 12:53:57 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/12 00:53:49 by sdeeyien         ###   ########.fr       */
+/*   Created: 2022/11/16 22:17:17 by sdeeyien          #+#    #+#             */
+/*   Updated: 2022/11/16 23:55:19 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 #include <unistd.h>
 
@@ -29,32 +27,25 @@ static	void	put_out(int fd, char *str, int len)
 	}
 }
 
-int	ft_puthex_fd_ret(int n, int fd, int hexi)
-// hexi = 1 -> HEX, hexi = 0 -> hex
+int	putunbr(unsigned int n, int fd)
 {
-	char		str[9];
+	char		str[20];
 	int			i;
-	unsigned int			rem;
 
 	i = 0;
-	while (i < 9)
+	while (i < 20)
 		str[i++] = '\0';
 	i = 0;
 	if (n == 0)
 		str[i++] = '0';
 	else
 	{
-		rem = (unsigned) n;
-		while (rem)
+		while (n != 0 && i < 20)
 		{
-			str[i] = (rem & 15) + '0';
-			if (str[i] > '9')
-				str[i] = str[i] - ('9' + 1) + 'A' + hexi * ('a' - 'A');
-			rem = rem >> 4;
-			i++;
+			str[i++] = n % 10 + '0';
+			n = n / 10;
 		}
 	}
 	put_out(fd, str, i);
 	return (i);
 }
-

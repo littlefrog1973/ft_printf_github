@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:29:07 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/16 17:12:19 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/16 22:54:54 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ int main(void)
 	printf("number of char in case of NULL: prtf = %d, ft_prtf =%d\n", prtf_ret, ft_prtf_ret);
 	printf("ptr to int ptr = %p\n", &ft_prtf_ret);
 	ft_printf("ptr to int ptr ft = %p\n", &ft_prtf_ret);
-
-	printf("   hex int = %X\n", -999999999);
-	ft_printf("ft hex int = %X\n", -999999999 );
-	printf("   unsigned int = %u\n", UINT_MAX);
+*/
+	prtf_ret = printf("   hex int = %x\n", -999999999);
+	ft_prtf_ret = ft_printf("ft hex int = %x\n", -999999999 );
+/*	printf("   unsigned int = %u\n", UINT_MAX);
 	ft_printf("unsigned int = %u\n", UINT_MAX );
 
 	printf("signed format with UINT_MAX= %d\n", UINT_MAX);
@@ -72,12 +72,12 @@ int main(void)
 
 	prtf_ret = printf(" NULL %s NULL \n",(char *) NULL);
 	ft_prtf_ret = ft_printf(" NULL %s NULL \n", (char*) NULL);
-*/
+
 	prtf_ret = printf("%s\n", (char *) NULL);
 	ft_prtf_ret = ft_printf("%s\n", (char *) NULL);
 	printf("prtf_return = %d, ft_prtf_return = %d\n", prtf_ret, ft_prtf_ret);
 
-/*
+
 	prtf_ret = printf("%c%c%c*", '\0', '1', 1);
 	printf("\n");
 	ft_prtf_ret = ft_printf("%c%c%c*", '\0', '1', 1);
