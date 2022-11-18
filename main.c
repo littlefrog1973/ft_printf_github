@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:29:07 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/17 11:53:57 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/18 23:26:00 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,15 @@ int main(void)
 	prtf_ret = printf("   hex int = %x %%\n", -999999999);
 	ft_prtf_ret = ft_printf("ft hex int = %x %%\n", -999999999 );
 	printf("prtf_ret = %d, ft_prtf_ret = %d\n", prtf_ret, ft_prtf_ret);
+
+	printf("new flags ===*****===\n");
+	printf("new flags ===%-5c===\n", 99);
+
+	if (__linux__)
+		printf("We are in Linux\n");
+	else
+		printf("We are in Mac\n");
+
 /*	printf("   unsigned int = %u\n", UINT_MAX);
 	ft_printf("unsigned int = %u\n", UINT_MAX );
 
