@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:52:01 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/18 21:50:42 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/19 00:44:59 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ft_printf.h"
 
 static int	check_fstr(const char **fstr, va_list ar_lst, int *no_prn)
+// To check conversion csdixXpu
 {
 	if (**fstr == '%')
 	{

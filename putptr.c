@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:17:56 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/16 23:54:49 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:05:46 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	putptr(void *ptr, int fd)
 		str[i++] = '\0';
 	i = 0;
 	if (ptr == NULL)
-		i = (int) ft_strlcpy(str, ")lin(", sizeof(")lin(") + 1);
+		i = (int) ft_strlcpy(str, NULL_PTR, sizeof(NULL_PTR) + 1);
 	else
 	{
 		rem = (size_t) ptr;

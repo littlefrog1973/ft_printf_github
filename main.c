@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:29:07 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/18 23:26:00 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/21 10:01:08 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,13 @@ int main(void)
 	printf("prtf_ret = %d, ft_prtf_ret = %d\n", prtf_ret, ft_prtf_ret);
 
 	printf("new flags ===*****===\n");
-	printf("new flags ===%-5c===\n", 99);
+	printf("new flags ===%5c===\n", 99);
 
 	if (__linux__)
 		printf("We are in Linux\n");
 	else
 		printf("We are in Mac\n");
+	ft_printf("Null ptr = %p\n", NULL);
 
 /*	printf("   unsigned int = %u\n", UINT_MAX);
 	ft_printf("unsigned int = %u\n", UINT_MAX );
