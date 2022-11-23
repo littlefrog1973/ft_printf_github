@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:52:01 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/19 00:44:59 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/22 23:36:43 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static int	check_fstr(const char **fstr, va_list ar_lst, int *no_prn)
 	{
 		if (ft_strchr("csdixXpu", *(*fstr + 1)))
 			*fstr += 2;
+		else if (ft_strchr("# +", *(*fstr +1)))
+			*fstr += 3;
 		if (*(*fstr - 1) == 'c')
 		{
 			ft_putchar_fd(va_arg(ar_lst, int), 1);
@@ -30,7 +32,7 @@ static int	check_fstr(const char **fstr, va_list ar_lst, int *no_prn)
 		if (*(*fstr - 1) == 'd' || *(*fstr - 1) == 'i')
 			return (*no_prn += putnbr(va_arg(ar_lst, int), 1));
 		if (*(*fstr - 1) == 'x' || *(*fstr - 1) == 'X')
-			return (*no_prn += puthex(va_arg(ar_lst, int), 1, (*(*fstr - 1))));
+			return (*no_prn += puthex(va_arg(ar_lst, int), 1, *fstr - 1));
 		if (*(*fstr - 1) == 'p')
 			return (*no_prn += putptr(va_arg(ar_lst, void *), 1));
 		if (*(*fstr - 1) == 'u')

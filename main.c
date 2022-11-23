@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:29:07 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/21 10:01:08 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/23 10:33:49 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(void)
 {
 	int prtf_ret;
 	int ft_prtf_ret;
+	char test[] = "0123456789";
 //	size_t ptr;
 //	void	*v_ptr;
 //	void	*null_ptr;
@@ -56,19 +57,25 @@ int main(void)
 	printf("ptr to int ptr = %p\n", &ft_prtf_ret);
 	ft_printf("ptr to int ptr ft = %p\n", &ft_prtf_ret);
 */
-	prtf_ret = printf("   hex int = %x %%\n", -999999999);
-	ft_prtf_ret = ft_printf("ft hex int = %x %%\n", -999999999 );
+/*
+	prtf_ret = printf("   hex int = %#x %%\n", 1000);
+	ft_prtf_ret = ft_printf("ft hex int = %#x %%\n", 1000 );
 	printf("prtf_ret = %d, ft_prtf_ret = %d\n", prtf_ret, ft_prtf_ret);
-
+*/
+	prtf_ret = printf("unsigned int =%+d\n", INT_MAX);
+	ft_prtf_ret = ft_printf("unsigned int =%d\n", UINT_MAX );
+	printf("prtf_ret = %d, ft_prtf_ret = %d\n", prtf_ret, ft_prtf_ret);
+/*
 	printf("new flags ===*****===\n");
 	printf("new flags ===%5c===\n", 99);
-
+*/
 	if (__linux__)
 		printf("We are in Linux\n");
 	else
 		printf("We are in Mac\n");
 	ft_printf("Null ptr = %p\n", NULL);
 
+	printf("sizeof string_constant = %lu\n", sizeof(test));
 /*	printf("   unsigned int = %u\n", UINT_MAX);
 	ft_printf("unsigned int = %u\n", UINT_MAX );
 

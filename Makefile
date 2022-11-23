@@ -6,7 +6,7 @@
 #    By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 12:25:01 by sdeeyien          #+#    #+#              #
-#    Updated: 2022/11/21 13:00:09 by sdeeyien         ###   ########.fr        #
+#    Updated: 2022/11/23 01:25:04 by sdeeyien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,10 @@ $(NAME): $(OBJ)
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
+
+bonus: $(OBJ)
+	cd $(LIBDIR) && make all
+	ar -rcs $@ $(OBJ) $(LIBDIR)/*.o
 
 clean :
 	rm -f *.o
