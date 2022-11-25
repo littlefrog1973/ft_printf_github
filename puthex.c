@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:18:33 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/23 10:13:00 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/24 16:10:01 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static	int	put_out(int fd, char *str, int len)
 	return (len);
 }
 
-int	puthex(int n, int fd, const char *hexi)
+int	puthex(int n, int fd, const char *hexi, unsigned int flag)
 {
 	int				i;
 	char			str[20];
@@ -52,9 +52,9 @@ int	puthex(int n, int fd, const char *hexi)
 			i++;
 		}
 	}
-	if (*(hexi - 1) == '#' && n != 0 && (*hexi - 'X'))
+	if ((flag & 0x0F00) && (n != 0) && (*hexi - 'X'))
 		i = ft_strlcat(str, "x0", sizeof("x0") + ft_strlen(str));
-	else if (*(hexi - 1) == '#' && n != 0 && *hexi == 'X')
+	else if ((flag & 0x0F00) && n != 0 && *hexi == 'X')
 		i = ft_strlcat(str, "X0", sizeof("X0") + ft_strlen(str));
 	return (put_out(fd, str, i));
 }

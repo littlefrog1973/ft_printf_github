@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:29:07 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/23 10:33:49 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/26 00:08:44 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,26 @@ int main(void)
 	ft_prtf_ret = ft_printf("ft hex int = %#x %%\n", 1000 );
 	printf("prtf_ret = %d, ft_prtf_ret = %d\n", prtf_ret, ft_prtf_ret);
 */
-	prtf_ret = printf("unsigned int =%+d\n", INT_MAX);
-	ft_prtf_ret = ft_printf("unsigned int =%d\n", UINT_MAX );
+/*
+	prtf_ret = printf("%++i this is %i getting%+ix hard :/\n", (int)-2147486, -2, 42);
+	ft_prtf_ret = ft_printf("%++i this is %i getting%+ix hard :/\n", (int)-2147486, -2, 42);
+*/
+	prtf_ret    =    printf(" % s \n", "-");
+	ft_prtf_ret = ft_printf(" % s \n", "-");
 	printf("prtf_ret = %d, ft_prtf_ret = %d\n", prtf_ret, ft_prtf_ret);
 /*
 	printf("new flags ===*****===\n");
 	printf("new flags ===%5c===\n", 99);
 */
+/*
 	if (__linux__)
 		printf("We are in Linux\n");
 	else
 		printf("We are in Mac\n");
 	ft_printf("Null ptr = %p\n", NULL);
-
+*/
 	printf("sizeof string_constant = %lu\n", sizeof(test));
+
 /*	printf("   unsigned int = %u\n", UINT_MAX);
 	ft_printf("unsigned int = %u\n", UINT_MAX );
 

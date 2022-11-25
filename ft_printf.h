@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 13:57:32 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/22 23:36:36 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/24 16:16:34 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@
 # include "libft/libft.h"
 
 int	ft_printf(char const *fstr, ...);
-int	putnbr(int n, int fd);
-//int	puthex(int n, int fd, int hexi);
-int	puthex(int n, int fd, const char *hexi);
+int	putnbr(int n, int fd, unsigned int flag);
+int	puthex(int n, int fd, const char *hexi, unsigned int flag);
 int	putptr(void *ptr, int fd);
 int	putunbr(unsigned int n, int fd);
-int	putstr(char *ptr, int fd);
+int	putstr(char *ptr, int fd, unsigned int flag);
 
 # ifdef __linux__
 #  define NULL_PTR ")lin("

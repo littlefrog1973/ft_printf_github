@@ -6,11 +6,12 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:18:16 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/16 23:52:15 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/24 16:10:28 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "ft_printf.h"
 
 static	int	put_out(int fd, char *str, int len)
 {
@@ -28,15 +29,13 @@ static	int	put_out(int fd, char *str, int len)
 	return (len);
 }
 
-int	putnbr(int n, int fd)
+int	putnbr(int n, int fd, unsigned int sign)
 {
 	char		str[20];
 	int			i;
 	long int	nn;
 
-	i = 0;
-	while (i < 20)
-		str[i++] = '\0';
+	ft_bzero(str, 20);
 	nn = (long) n;
 	i = 0;
 	if (nn == 0)
@@ -54,5 +53,12 @@ int	putnbr(int n, int fd)
 		if (n < 0)
 			str[i++] = '-';
 	}
+	if ((sign & 0x000F) && n >= 0)
+	{
+		str[i++] = '+';
+		return (put_out(fd, str, i));
+	}
+	else if ((sign & 0x00F0) && n >= 0)
+		str[i++] = ' ';
 	return (put_out(fd, str, i));
 }
