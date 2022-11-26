@@ -6,7 +6,7 @@
 #    By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 12:25:01 by sdeeyien          #+#    #+#              #
-#    Updated: 2022/11/23 01:25:04 by sdeeyien         ###   ########.fr        #
+#    Updated: 2022/11/27 00:10:29 by sdeeyien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LIBDIR = libft
 
 DEPS = ft_printf.h
 
-SRC = ft_printf.c putnbr.c puthex.c putptr.c putunbr.c putstr.c
+SRC = ft_printf.c putnbr.c puthex.c putptr.c putunbr.c putstr.c putchr.c
 
 OBJ = $(SRC:.c=.o)
 

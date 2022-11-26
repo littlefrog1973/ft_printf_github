@@ -6,12 +6,28 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:18:16 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/24 16:10:28 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/27 01:12:17 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "ft_printf.h"
+
+static	int	nbr2a(char *str, long int nn)
+{
+	int	i;
+
+	i = 0;
+	while (nn != 0 && i < 20)
+	{
+		if (nn > 0)
+			str[i++] = nn % 10 + '0';
+		else
+			str[i++] = -nn % 10 + '0';
+		nn = nn / 10;
+	}
+	return (i);
+}
 
 static	int	put_out(int fd, char *str, int len)
 {
@@ -42,14 +58,7 @@ int	putnbr(int n, int fd, unsigned int sign)
 		str[i++] = '0';
 	else
 	{
-		while (nn != 0 && i < 20)
-		{
-			if (nn > 0)
-				str[i++] = nn % 10 + '0';
-			else
-				str[i++] = -nn % 10 + '0';
-			nn = nn / 10;
-		}
+		i = nbr2a(str, nn);
 		if (n < 0)
 			str[i++] = '-';
 	}

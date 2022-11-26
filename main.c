@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:29:07 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/26 00:08:44 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/27 00:25:40 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ int main(void)
 //	v_ptr = (void *) &ft_prtf_ret;
 //	null_ptr = NULL;
 
-/* ignore to debuch %c on bottom 20221116 16:15
-	printf("c = %c\n", 'c');
-	ft_printf("c = %c\n", 'c');
-
+	printf("c = %c\n", '\77');
+	ft_printf("c = %c\n", '\77');
+/*
 	prtf_ret =       printf("s = %s, c = %c, s2 = %s\n", "0123456789", 'a', "\050");
 	ft_prtf_ret = ft_printf("s = %s, c = %c, s2 = %s\n", "0123456789", 'a', "\050");
 	printf("prtf_return = %d, ft_prtf_return = %d\n", prtf_ret, ft_prtf_ret);

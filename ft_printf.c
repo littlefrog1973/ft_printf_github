@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:52:01 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/25 00:42:41 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/27 00:08:11 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@ static const char	*seek_disx(const char *fstr, unsigned int *flag)
 	i = 0;
 	while (fstr[i])
 	{
-
-//		printf(" In seek_disx fstr[i] = %c\n", fstr[i]);
 		if (ft_strchr("idsxX", fstr[i]))
-			break;
+			break ;
 		else if (fstr[i] == '+')
 			*flag = *flag | 0x000F;
 		else if (fstr[i] == ' ')
@@ -32,7 +30,6 @@ static const char	*seek_disx(const char *fstr, unsigned int *flag)
 			*flag = *flag | 0x0F00;
 		i++;
 	}
-//	printf(" In seek_disx i = %d\n", i);
 	return (&fstr[i] + 1);
 }
 
@@ -49,10 +46,7 @@ static int	check_fstr(const char **fstr, va_list ar_lst, int *no_prn)
 		else if (ft_strchr("csdixXpu", *(*fstr + 1)))
 			*fstr += 2;
 		if (*(*fstr - 1) == 'c')
-		{
-			ft_putchar_fd(va_arg(ar_lst, int), 1);
-			return (++(*no_prn));
-		}
+			return (*no_prn += putchr(va_arg(ar_lst, int), 1));
 		if (*(*fstr - 1) == 's')
 			return (*no_prn += putstr(va_arg(ar_lst, char *), 1, flag));
 		if (*(*fstr - 1) == 'd' || *(*fstr - 1) == 'i')
@@ -85,7 +79,7 @@ int	ft_printf(const char *fstr, ...)
 		else if (!check_fstr(&fstr, ar_lst, &no_prn))
 		{
 			if (!(*fstr))
-				break;
+				break ;
 			ft_putchar_fd(*(fstr), 1);
 			fstr++;
 			no_prn++;
