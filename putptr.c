@@ -6,13 +6,10 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:17:56 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/21 13:05:46 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/27 01:56:33 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-#include <unistd.h>
 #include "ft_printf.h"
 
 static	void	put_out(int fd, char *str, int len)

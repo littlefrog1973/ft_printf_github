@@ -6,11 +6,11 @@
 #    By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 12:25:01 by sdeeyien          #+#    #+#              #
-#    Updated: 2022/11/27 00:10:29 by sdeeyien         ###   ########.fr        #
+#    Updated: 2022/11/27 01:50:03 by sdeeyien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang
+CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
 LIBDIR = libft
@@ -34,7 +34,7 @@ $(NAME): $(OBJ)
 
 bonus: $(OBJ)
 	cd $(LIBDIR) && make all
-	ar -rcs $@ $(OBJ) $(LIBDIR)/*.o
+	ar -rcs $(NAME) $(OBJ) $(LIBDIR)/*.o
 
 clean :
 	rm -f *.o
@@ -46,4 +46,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re bonus

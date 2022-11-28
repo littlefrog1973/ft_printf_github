@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putstr.c                                           :+:      :+:    :+:   */
+/*   putchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 22:17:37 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/27 01:57:47 by sdeeyien         ###   ########.fr       */
+/*   Created: 2022/11/27 00:07:45 by sdeeyien          #+#    #+#             */
+/*   Updated: 2022/11/27 00:27:22 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <unistd.h>
 
-int	putstr(char *s, int fd, unsigned int flag)
+int	putchr(int c, int fd)
 {
-	if (s)
-	{
-		if ((flag & 0x00F0) && *s)
-		{
-			write(fd, s, ft_strlen(s));
-			return (ft_strlen(s));
-		}
-		write(fd, s, ft_strlen(s));
-		return (ft_strlen(s));
-	}
-	else
-	{
-		write(fd, "(null)", sizeof("(null)") - 1);
-		return (sizeof("(null)") - 1);
-	}
+	return (write(fd, &c, 1));
 }

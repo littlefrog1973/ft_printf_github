@@ -6,11 +6,10 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:52:01 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/27 00:08:11 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/11/27 01:52:25 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "ft_printf.h"
 
 static const char	*seek_disx(const char *fstr, unsigned int *flag)
