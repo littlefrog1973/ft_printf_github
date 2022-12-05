@@ -6,7 +6,7 @@
 /*   By: sdeeyien <sukitd@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:29:07 by sdeeyien          #+#    #+#             */
-/*   Updated: 2022/11/27 00:25:40 by sdeeyien         ###   ########.fr       */
+/*   Updated: 2022/12/05 07:19:07 by sdeeyien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ int main(void)
 //	v_ptr = (void *) &ft_prtf_ret;
 //	null_ptr = NULL;
 
-	printf("c = %c\n", '\77');
-	ft_printf("c = %c\n", '\77');
-/*
+//	printf("c = %c\n", '\77');
+//	ft_printf("c = %c\n", '\77');
+
 	prtf_ret =       printf("s = %s, c = %c, s2 = %s\n", "0123456789", 'a', "\050");
 	ft_prtf_ret = ft_printf("s = %s, c = %c, s2 = %s\n", "0123456789", 'a', "\050");
 	printf("prtf_return = %d, ft_prtf_return = %d\n", prtf_ret, ft_prtf_ret);
 
 	prtf_ret =       printf("number in HEX = %X, str = %s, char = %c\n", -32, "test", 't');
-	ft_prtf_ret = ft_printf("number = %i, str = %s, char = %c\n", INT_MAX, "test",'t');
+	ft_prtf_ret = ft_printf("number in HEX = %X, str = %s, char = %c\n", -32, "test", 't');
 	printf("prtf_return = %d, ft_prtf_return = %d\n", prtf_ret, ft_prtf_ret);
-
+/*
 	printf("int ptr = %p\n", &prtf_ret);
 	ptr = (size_t) &prtf_ret;
 	printf("size_t conversion of int ptr = %lu\n", ptr);
